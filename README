@@ -1,0 +1,8 @@
+InstaPo-
+	App that will send the location details automatically to remote in a regular interval of time.
+
+InstaAdmin-
+	This is a admin app which will show the Location details of the InstaPo of each users.It will show the user details on map with their current location.
+
+
+For this i used Firebase a dataStore.
