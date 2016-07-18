@@ -14,7 +14,12 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:id="@+id/btnstart"
-         android:text="Start" />
+         android:text="Start Chasing me" />
+     <Button
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/btn_round_chase"
+         android:text="Round trip Chase" />
      <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

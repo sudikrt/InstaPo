@@ -121,6 +121,8 @@ public class BackgroundLocation extends Service implements
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
 
+        //Log.e("Backgr_Loc", "OnstartCommand");
+        //Log.e("Backgr_Loc", String.valueOf(intent.getExtras().getString("data")));
         PowerManager mgr = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
         if (this.mWakeLock == null) {

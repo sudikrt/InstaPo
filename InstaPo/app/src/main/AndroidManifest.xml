@@ -37,7 +37,8 @@
         </service>
 
         <activity android:name=".MainActivity" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".RoundTripChase"></activity>
     </application>
 
 </manifest>

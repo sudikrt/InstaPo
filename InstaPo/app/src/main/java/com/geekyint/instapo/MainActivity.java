@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnSignout, btnStart;
+    private Button btnRoundTrip;
     private int i = 0;
     private FirebaseAuth auth;
     public boolean chkStatus() {
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnSignout = (Button) findViewById(R.id.btnstop);
         btnStart = (Button) findViewById(R.id.btnstart);
+        btnRoundTrip = (Button) findViewById(R.id.btn_round_chase);
         btnSignout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
                     if (isReadLocationAllowed () ) {
                        // Toast.makeText(getApplicationContext(), "You already have the permission",
                          //       Toast.LENGTH_LONG).show();
-                        startService(new Intent(MainActivity.this, BackgroundLocation.class));
+                        startService(new Intent(MainActivity.this, BackgroundLocation.class).putExtra("data_1", "Hel"));
                         Log.e("MainACtivity", "Service started");
-                        btnStart.setText("Stop");
+                        btnStart.setText("Stop Chasing me");
                         i++;
                         return;
                     }
@@ -110,9 +112,16 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     stopService(new Intent(MainActivity.this, BackgroundLocation.class));
                     Log.e("MainActivity", "Service Stopped");
-                    btnStart.setText("Start");
+                    btnStart.setText("Start Chasing me");
                     i++;
                 }
+            }
+        });
+
+        btnRoundTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent(MainActivity.this, RoundTripChase.class));
             }
         });
     }

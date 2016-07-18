@@ -2,6 +2,7 @@ package com.geekyint.instapo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 import com.google.android.gms.location.LocationResult;
@@ -25,6 +26,9 @@ public class LocationReceiver extends WakefulBroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // Need to check and grab the Intent's extras like so
         if(LocationResult.hasResult(intent)) {
+
+            String s = intent.getStringExtra("data_1");
+            Log.e(TAG, String.valueOf(s));
             this.mLocationResult = LocationResult.extractResult(intent);
 
             new FBSender().put(mLocationResult.getLastLocation());
